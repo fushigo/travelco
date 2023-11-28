@@ -1,6 +1,8 @@
 import { Header } from "@/components/header";
 import { DestinationsSection } from "@/components/pages/destinations";
 import { HomeSection } from "@/components/pages/home";
+import { LocationSection } from "@/components/pages/locations";
+import { ReservationSection } from "@/components/pages/reservasion";
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <div className="container w-full gap-16 flex flex-col justify-center items-center p-4 overflow-hidden">
         <HomeSection />
         <DestinationsSection />
+        <ReservationSection />
+        <LocationSection />
       </div>
     </main>
   );
