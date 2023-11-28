@@ -6,7 +6,7 @@ import bromo from "@/asset/bromo.png";
 
 export default function DestinationsSection() {
   return (
-    <div className="flex flex-col justify-center items-center gap-8 w-full">
+    <div className="flex flex-col justify-center items-center gap-8 w-full  ">
       <h2 className="w-full font-bold text-secondary text-xl">
         DESTINASI FAVORIT
       </h2>

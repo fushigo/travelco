@@ -28,7 +28,7 @@ export default function HomeSection() {
             di indonesia <span className="font-sans">🏝</span>
           </h1>
           <p className="text-base font-jakarta">
-            Destinize membuat kamu selalu update terkait tempat liburan baru di
+            Travelco membuat kamu selalu update terkait tempat liburan baru di
             Indonesia dengan mengikuti perkembangan para influencer di sosial
             media ✨
           </p>
