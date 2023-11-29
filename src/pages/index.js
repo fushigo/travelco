@@ -3,7 +3,9 @@ import { AboutSection } from "@/components/pages/about";
 import { DestinationsSection } from "@/components/pages/destinations";
 import { HomeSection } from "@/components/pages/home";
 import { LocationSection } from "@/components/pages/locations";
+import { QuestionSection } from "@/components/pages/question";
 import { ReservationSection } from "@/components/pages/reservasion";
+import { TestimoniSection } from "@/components/pages/tertimoni";
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
         <ReservationSection />
         <LocationSection />
         <AboutSection />
+        <TestimoniSection />
+        <QuestionSection />
       </div>
     </main>
   );
