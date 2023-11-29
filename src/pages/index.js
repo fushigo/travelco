@@ -1,4 +1,5 @@
 import { Header } from "@/components/header";
+import { AboutSection } from "@/components/pages/about";
 import { DestinationsSection } from "@/components/pages/destinations";
 import { HomeSection } from "@/components/pages/home";
 import { LocationSection } from "@/components/pages/locations";
@@ -15,6 +16,7 @@ export default function Home() {
         <DestinationsSection />
         <ReservationSection />
         <LocationSection />
+        <AboutSection />
       </div>
     </main>
   );
