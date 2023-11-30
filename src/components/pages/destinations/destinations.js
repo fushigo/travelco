@@ -11,7 +11,9 @@ export default function DestinationsSection() {
         DESTINASI FAVORIT
       </h2>
       <div className="flex flex-row flex-wrap justify-between items-center w-full">
-        <h3 className="text-lg font-bold text-font">Temukan Destinasimu</h3>
+        <h3 className="text-4xl font-bold text-font">
+          ✈ • Temukan Destinasi Favoritmu
+        </h3>
         <p className="text-secondary">Lihat semua {">"}</p>
       </div>
       <div className="w-full flex flex-row flex-wrap gap-2 gap-y-4 justify-around">
