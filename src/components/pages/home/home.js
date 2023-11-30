@@ -4,10 +4,25 @@ import polygon_icon from "@/asset/Polygon.png";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
 import { PartnerCommponent } from "@/components/partner";
+import { PlayButton } from "@/components/button-play";
 
 export default function HomeSection() {
   return (
     <div className="flex flex-col w-full h-auto gap-12">
+      <dialog id="my_modal_5" className="modal modal-middle">
+        <div className="modal-box bg-white">
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">
+            Press ESC key or click the button below to close
+          </p>
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
       <div className="flex flex-row items-center justify-around gap-2">
         <div className="py-3 rounded-full px-4 w-fit bg-blue-200">
           <p className="font-bold text-[11px] text-blue-600 font-jakarta">
@@ -42,9 +57,7 @@ export default function HomeSection() {
           Mulai sekarang →
         </div>
         <div className="flex flex-row flex-wrap items-center gap-4">
-          <div className="btn btn-ghost bg-white text-primary rounded-full border-2 border-secondary">
-            <Image src={polygon_icon} />
-          </div>
+          <PlayButton />
           <p>Putar Demo</p>
         </div>
       </div>

@@ -7,7 +7,7 @@ export default function PlayButton() {
 
   return (
     <div
-      className="flex justify-center items-center absolute p-8 bg-secondary rounded-full text-primary"
+      className="flex justify-center text-center items-center p-4 bg-secondary rounded-full text-primary"
       onClick={handleClick}
     >
       <FaPlay />

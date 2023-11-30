@@ -9,7 +9,7 @@ import { TestimoniSection } from "@/components/pages/tertimoni";
 
 export default function Home() {
   return (
-    <main className={`flex flex-col items-center justify-center`}>
+    <main className={`flex flex-col items-center justify-center bg-white text-font`}>
       <div className="w-full">
         <Header></Header>
       </div>
