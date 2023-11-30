@@ -10,29 +10,31 @@ export default function ReservationSection() {
           Gak mau ngantri? reservasi aja!
         </h3>
       </div>
-      <div className="flex flex-col w-full gap-y-8">
-        <TextIcon
-          number={1}
-          title={"Cari tempat yang kamu mau"}
-          desc={
-            "Temukan destinasi selanjutnya yang akan kamu kunjungi dengan Travelco."
-          }
-        />
-        <TextIcon
-          number={2}
-          title={"Isi data dan konfirmasi pembayaran"}
-          desc={"Tulis dan lengkapi data kamu untuk keperluan data booking."}
-        />
-        <TextIcon
-          number={3}
-          title={"Tinggal masuk dan enjoy!"}
-          desc={
-            "Kamu bisa langsung masuk dan enjoy liburan kamu tanpa hambatan."
-          }
-        />
-      </div>
-      <div className="w-full">
-        <CardAbsolute />
+      <div className="md:flex-row md:flex justify-between items-center md:gap-48">
+        <div className="flex flex-col w-full gap-y-8">
+          <TextIcon
+            number={1}
+            title={"Cari tempat yang kamu mau"}
+            desc={
+              "Temukan destinasi selanjutnya yang akan kamu kunjungi dengan Travelco."
+            }
+          />
+          <TextIcon
+            number={2}
+            title={"Isi data dan konfirmasi pembayaran"}
+            desc={"Tulis dan lengkapi data kamu untuk keperluan data booking."}
+          />
+          <TextIcon
+            number={3}
+            title={"Tinggal masuk dan enjoy!"}
+            desc={
+              "Kamu bisa langsung masuk dan enjoy liburan kamu tanpa hambatan."
+            }
+          />
+        </div>
+        <div className="w-full xl:w-[40rem]">
+          <CardAbsolute />
+        </div>
       </div>
     </div>
   );

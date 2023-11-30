@@ -20,11 +20,13 @@ export default function AboutSection() {
             LEBIH DEKAT DENGAN TRAVELCO
           </p>
           <h2 className="text-4xl font-extrabold">MENGENAL TRAVELCO</h2>
-          <h3 className="text-xl font-bold">Galeri pariwisata & Blog Travel</h3>
+          <h3 className="text-xl font-bold">
+            🖼• Galeri Pariwisata & Blog Travel
+          </h3>
         </div>
         <div className="space-y-8">
-          <div className="flex flex-col gap-8">
-            <div>
+          <div className="flex flex-col gap-8 md:flex-row lg:gap-4 lg:justify-center lg:items-center">
+            <div className="lg:w-1/4">
               <BlogCard
                 img={cover}
                 date={"26 DESEMBER 2023"}
@@ -32,24 +34,27 @@ export default function AboutSection() {
                 desc={"Jadi gini gann, anda tau bromo?, yaa gunung kan?"}
               />
             </div>
-            <div className="flex flex-col items-center justify-center relative w-full">
+            <div className="flex flex-col items-center justify-center relative w-full lg:w-1/2">
               <YouTube
-                className="w-full flex  justify-center"
+                className="w-full flex justify-center"
                 videoId="DiDJkl582dk"
               />
             </div>
           </div>
-          <div className="sm:w-full sm:flex sm:justify-center sm:items-center">
-            <div className="w-full rounded-xl relative sm:w-1/2">
-              <Image className="rounded-xl sm:w-full" src={bg_cover} />
-              <div className="p-4 absolute top-0 left-0 text-white flex flex-col gap-4">
-                <h3 className="text-xl font-bold">
+          <div className="sm:w-full sm:flex sm:justify-center sm:items-center lg:justify-center">
+            <div className="w-full rounded-xl relative sm:w-1/2 md:w-full lg:justify-center lg:items-center lg:w-fit">
+              <Image
+                className="rounded-xl sm:w-full md:object-fill md:h-[16rem] md:w-[60rem] lg:w-[58rem]"
+                src={bg_cover}
+              />
+              <div className="p-4 absolute top-0 left-0 text-white flex flex-col gap-4 md:top-16">
+                <h3 className="text-xl font-bold lg:text-2xl">
                   Tips meminum air kawah biar lidah tidak melepuh 😁
                 </h3>
-                <p className="font-bold">
+                <p className="font-bold lg:text-xl">
                   Agar lidah tidak melepuh.... Pinjam dulu sepuluh....
                 </p>
-                <p className="font-bold">Google Trending Baru</p>
+                <p className="font-bold lg:text-xl">Google Trending Baru</p>
               </div>
             </div>
           </div>

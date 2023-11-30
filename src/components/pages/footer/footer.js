@@ -6,9 +6,9 @@ import { MdOutlineLocationOn } from "react-icons/md";
 
 export default function FooterSection() {
   return (
-    <div className="flex flex-col septaGtg">
-      <div className="bg-secondary rounded-t-2xl">
-        <div className="flex flex-col gap-4 p-4">
+    <div className="flex flex-col septaGtg justify-center items-center">
+      <div className="bg-secondary rounded-t-2xl md:flex md:flex-row md:items-center">
+        <div className="flex flex-col gap-8 p-8">
           <h2 className="text-4xl font-extrabold text-primary">
             Masih bingung cari tempat yang cocok?
           </h2>
@@ -18,38 +18,44 @@ export default function FooterSection() {
             berikan
           </p>
         </div>
-        <div>
-          <Image src={one} />
+        <div className="mt-8 md:mt-0">
+          <Image className="sm:w-full md:h-[22rem] md:w-[50rem]" src={one} />
         </div>
       </div>
-      <div className="p-4 flex flex-col gap-4">
-        <h1 className="text-4xl font-extrabold">Travelco</h1>
-        <h2 className="text-base">
-          Travelco adalah website atau layanan aplikasi yang membantu kamu
-          memilih atau merekomendasikan tempat yang dijuluki ‘hidden gems’ agar
-          lebih dikenal dan ramai.
-        </h2>
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-row gap-4 items-center">
-            <div>
-              <FiPhoneCall />
+      <div className="p-4 flex flex-col gap-4 container md:flex-row md:gap-12 lg:px-12">
+        <div className="flex flex-col gap-4 md:w-full">
+          <h1 className="text-4xl font-extrabold">Travelco</h1>
+          <h2 className="text-base">
+            Travelco adalah website atau layanan aplikasi yang membantu kamu
+            memilih atau merekomendasikan tempat yang dijuluki ‘hidden gems’
+            agar lebih dikenal dan ramai.
+          </h2>
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-row gap-4 items-center">
+              <div>
+                <FiPhoneCall />
+              </div>
+              <div>+62-838-7612-2926</div>
             </div>
-            <div>+62-838-7612-2926</div>
+            <div className="flex flex-row gap-4 items-center">
+              <div>
+                <CiMail />
+              </div>
+              <div>fushigo17@gmail.com</div>
+            </div>
+            <div className="flex flex-row gap-4 items-center">
+              <div>
+                <MdOutlineLocationOn />
+              </div>
+              <div>Surakarta, Jawa Tengah</div>
+            </div>
           </div>
-          <div className="flex flex-row gap-4 items-center">
-            <div>
-              <CiMail />
-            </div>
-            <div>fushigo17@gmail.com</div>
-          </div>
-          <div className="flex flex-row gap-4 items-center">
-            <div>
-              <MdOutlineLocationOn />
-            </div>
-            <div>Surakarta, Jawa Tengah</div>
+          <div className="hidden items-start justify-start mt-8 font-bold md:flex border-t-2 p-8 w-full">
+            <p>© 2023-2024, All Rights Reserved</p>
           </div>
         </div>
-        <div className="flex flex-row gap-8 mt-8 w-full justify-center">
+
+        <div className="flex flex-row gap-8 mt-8 w-full justify-center sm:justify-between">
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl font-bold">Tentang</h2>
             <a className="text-sm">Tentang Kami</a>
@@ -78,8 +84,8 @@ export default function FooterSection() {
             <a className="text-sm">Bahasa</a>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full mt-8 font-bold">
-          <p>© 2021-2022, All Rights Reserved</p>
+        <div className="flex items-center justify-center w-full mt-8 font-bold md:hidden">
+          <p>© 2023-2024, All Rights Reserved</p>
         </div>
       </div>
     </div>

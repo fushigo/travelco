@@ -1,8 +1,13 @@
 import { FaPlay } from "react-icons/fa6";
+import YouTube from "react-youtube";
 
 export default function PlayButton() {
   const handleClick = () => {
-    document.getElementById("my_modal_5").showModal();
+    return (
+      <div>
+        <YouTube videoId="OEhw6GqQDts" />
+      </div>
+    );
   };
 
   return (

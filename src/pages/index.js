@@ -16,7 +16,7 @@ export default function Home() {
       <div className="w-full">
         <Header></Header>
       </div>
-      <div className="container w-full gap-16 flex flex-col justify-center items-center p-4 overflow-hidden">
+      <div className="container w-full gap-16 flex flex-col justify-center items-center p-4 overflow-hidden pt-20 md:px-8 lg:px-20">
         <HomeSection />
         <DestinationsSection />
         <ReservationSection />

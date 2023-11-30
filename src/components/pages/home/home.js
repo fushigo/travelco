@@ -4,25 +4,13 @@ import polygon_icon from "@/asset/Polygon.png";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaUserLarge } from "react-icons/fa6";
 import { PartnerCommponent } from "@/components/partner";
+import { FaPlay } from "react-icons/fa";
 import { PlayButton } from "@/components/button-play";
+import YouTube from "react-youtube";
 
 export default function HomeSection() {
   return (
-    <div className="flex flex-col w-full h-auto gap-12">
-      <dialog id="my_modal_5" className="modal modal-middle">
-        <div className="modal-box bg-white">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">
-            Press ESC key or click the button below to close
-          </p>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
+    <div className="flex flex-col w-full h-auto gap-8 lg:gap-4">
       <div className="flex flex-row items-center justify-between gap-2 ">
         <div className="py-3 rounded-full px-4 w-fit bg-blue-200">
           <p className="font-bold text-[11px] text-blue-600 font-jakarta sm:text-sm">
@@ -38,9 +26,9 @@ export default function HomeSection() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 md:flex-row lg:items-center">
         <div className="space-y-4">
-          <h1 className="text-4xl font-extrabold font-jakarta leading-tight">
+          <h1 className="text-4xl font-extrabold font-jakarta leading-tight lg:text-6xl">
             Liburan & nikmati <span className="text-secondary">tempatbaru</span>{" "}
             di indonesia <span className="font-sans">🏝</span>
           </h1>
@@ -50,17 +38,30 @@ export default function HomeSection() {
             media ✨
           </p>
         </div>
+        <div className="w-full sm:flex sm:justify-center">
+          <Image className="bg-transparent sm:w-1/2 md:w-3/5" src={hero_icon} />
+        </div>
       </div>
-      <div className="w-full sm:flex sm:justify-center">
-        <Image className="shadow-2xl bg-transparent sm:w-1/2" src={hero_icon} />
-      </div>
-      <div className="flex flex-row justify-around gap-8 flex-wrap items-center">
+      <div className="flex flex-row justify-around gap-8 flex-wrap items-center md:justify-start">
         <div className="btn btn-ghost bg-secondary text-primary text-xl">
           Mulai sekarang →
         </div>
         <div className="flex flex-row flex-wrap items-center gap-4">
-          <PlayButton />
-          <p>Putar Demo</p>
+          <label for="my_modal_6" class="btn">
+            <FaPlay />
+            Mulai Demo
+          </label>
+          <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+          <div class="modal" role="dialog">
+            <div class="modal-box w-fit">
+              <YouTube videoId="DiDJkl582dk" />
+              <div class="modal-action">
+                <label for="my_modal_6" class="btn">
+                  Close!
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="w-full">

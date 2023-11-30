@@ -25,8 +25,8 @@ export default function Slider() {
           spaceBetween: 200,
         },
         1024: {
-          slidesPerView: 5,
-          spaceBetween: 50,
+          slidesPerView: 3,
+          spaceBetween: 30,
         },
       }}
       onSlideChange={() => console.log("slide change")}

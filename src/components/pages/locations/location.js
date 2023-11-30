@@ -7,12 +7,14 @@ export default function LocationSection() {
   return (
     <div className="flex flex-col w-full h-auto gap-8">
       <div>
-        <h2 className="font-bold text-xl text-secondary">CARI TEMPAT WISATA</h2>
-        <h3 className="font-extrabold text-4xl">
-          Cari Tempat Wisata Didekatmu
+        <h2 className="font-bold text-xl text-secondary md:text-center">
+          CARI TEMPAT WISATA
+        </h2>
+        <h3 className="font-extrabold text-4xl md:text-center">
+          🗺 • Cari Tempat Wisata Didekatmu
         </h3>
       </div>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 md:text-center">
         <p>
           Fitur ini memungkinkan kamu untuk mencari tempat wisata atau tempat
           yang sedang popular di daerah kamu dengan begitu kamu akan selalu
@@ -20,29 +22,41 @@ export default function LocationSection() {
         </p>
         <Image className="sm:w-full" src={map_img} />
         <div className="flex flex-row justify-center items-center w-full">
-          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center">
+          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center md:flex-row md:flex-nowrap">
             <Icons icons={<FaLocationDot />} />
-            <h4 className="text-center">Popular di dekatmu</h4>
-            <p className="text-center">
-              Tempat pariwisata yang populer dan pasti dikenal semua orang
-              didekatmu
-            </p>
+            <div>
+              <h4 className="text-center md:text-start font-bold  ">
+                Popular di dekatmu
+              </h4>
+              <p className="text-center md:text-start ">
+                Tempat pariwisata yang populer dan pasti dikenal semua orang
+                didekatmu
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center">
+          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center md:flex-row md:flex-nowrap">
             <Icons icons={<FaLocationDot />} />
-            <h4 className="text-center">Popular di dekatmu</h4>
-            <p className="text-center">
-              Tempat pariwisata yang populer dan pasti dikenal semua orang
-              didekatmu
-            </p>
+            <div>
+              <h4 className="text-center md:text-start font-bold">
+                Popular di dekatmu
+              </h4>
+              <p className="text-center md:text-start">
+                Tempat pariwisata yang populer dan pasti dikenal semua orang
+                didekatmu
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center">
+          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center md:flex-row md:flex-nowrap">
             <Icons icons={<FaLocationDot />} />
-            <h4 className="text-center">Popular di dekatmu</h4>
-            <p className="text-center">
-              Tempat pariwisata yang populer dan pasti dikenal semua orang
-              didekatmu
-            </p>
+            <div>
+              <h4 className="text-center md:text-start font-bold">
+                Popular di dekatmu
+              </h4>
+              <p className="text-center md:text-start">
+                Tempat pariwisata yang populer dan pasti dikenal semua orang
+                didekatmu
+              </p>
+            </div>
           </div>
         </div>
       </div>
