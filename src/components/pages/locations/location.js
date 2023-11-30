@@ -12,13 +12,13 @@ export default function LocationSection() {
           Cari Tempat Wisata Didekatmu
         </h3>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8">
         <p>
           Fitur ini memungkinkan kamu untuk mencari tempat wisata atau tempat
           yang sedang popular di daerah kamu dengan begitu kamu akan selalu
           update dan gak kudet lagi.
         </p>
-        <Image src={map_img} />
+        <Image className="sm:w-full" src={map_img} />
         <div className="flex flex-row justify-center items-center w-full">
           <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center">
             <Icons icons={<FaLocationDot />} />

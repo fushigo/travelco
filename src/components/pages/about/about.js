@@ -39,16 +39,18 @@ export default function AboutSection() {
               />
             </div>
           </div>
-          <div className="w-full rounded-xl relative">
-            <Image className="rounded-xl" src={bg_cover} />
-            <div className="p-4 absolute top-0 left-0 text-white flex flex-col gap-4">
-              <h3 className="text-xl font-bold">
-                Tips meminum air kawah biar lidah tidak melepuh 😁
-              </h3>
-              <p className="font-bold">
-                Agar lidah tidak melepuh.... Pinjam dulu sepuluh....
-              </p>
-              <p className="font-bold">Google Trending Baru</p>
+          <div className="sm:w-full sm:flex sm:justify-center sm:items-center">
+            <div className="w-full rounded-xl relative sm:w-1/2">
+              <Image className="rounded-xl sm:w-full" src={bg_cover} />
+              <div className="p-4 absolute top-0 left-0 text-white flex flex-col gap-4">
+                <h3 className="text-xl font-bold">
+                  Tips meminum air kawah biar lidah tidak melepuh 😁
+                </h3>
+                <p className="font-bold">
+                  Agar lidah tidak melepuh.... Pinjam dulu sepuluh....
+                </p>
+                <p className="font-bold">Google Trending Baru</p>
+              </div>
             </div>
           </div>
         </div>

@@ -23,17 +23,19 @@ export default function HomeSection() {
           </div>
         </div>
       </dialog>
-      <div className="flex flex-row items-center justify-around gap-2">
+      <div className="flex flex-row items-center justify-between gap-2 ">
         <div className="py-3 rounded-full px-4 w-fit bg-blue-200">
-          <p className="font-bold text-[11px] text-blue-600 font-jakarta">
+          <p className="font-bold text-[11px] text-blue-600 font-jakarta sm:text-sm">
             ✈ • Explore the wonderful indonesia!
           </p>
         </div>
-        <div className="p-2 bg-blue-500 text-white rounded-full">
-          <FaCartShopping />
-        </div>
-        <div className="p-2 bg-blue-200 rounded-full text-blue-500">
-          <FaUserLarge />
+        <div className="flex flex-row gap-8">
+          <div className="p-2 bg-blue-500 text-white rounded-full">
+            <FaCartShopping />
+          </div>
+          <div className="p-2 bg-blue-200 rounded-full text-blue-500">
+            <FaUserLarge />
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-8">
@@ -49,8 +51,8 @@ export default function HomeSection() {
           </p>
         </div>
       </div>
-      <div>
-        <Image className="shadow-2xl bg-transparent" src={hero_icon} />
+      <div className="w-full sm:flex sm:justify-center">
+        <Image className="shadow-2xl bg-transparent sm:w-1/2" src={hero_icon} />
       </div>
       <div className="flex flex-row justify-around gap-8 flex-wrap items-center">
         <div className="btn btn-ghost bg-secondary text-primary text-xl">

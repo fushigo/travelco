@@ -1,3 +1,5 @@
+import { Accordion } from "@/components/accordion";
+
 export default function QuestionSection() {
   return (
     <div className="flex-col flex gap-8">
@@ -8,6 +10,9 @@ export default function QuestionSection() {
         <h2 className="text-4xl font-extrabold">
           PERTANYAAN PALING SERING DITANYAKAN
         </h2>
+      </div>
+      <div>
+        <Accordion />
       </div>
     </div>
   );

@@ -21,8 +21,8 @@ export default function Slider() {
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 4,
-          spaceBetween: 40,
+          slidesPerView: 3,
+          spaceBetween: 200,
         },
         1024: {
           slidesPerView: 5,
