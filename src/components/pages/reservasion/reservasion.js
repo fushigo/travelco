@@ -10,7 +10,7 @@ export default function ReservationSection() {
           Gak mau ngantri? reservasi aja!
         </h3>
       </div>
-      <div className="md:flex-row md:flex justify-between items-center md:gap-48">
+      <div className="md:flex-row md:flex justify-between space-y-8 items-center md:gap-48">
         <div className="flex flex-col w-full gap-y-8">
           <TextIcon
             number={1}
