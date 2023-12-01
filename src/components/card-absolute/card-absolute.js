@@ -10,7 +10,7 @@ import { FaRegHeart } from "react-icons/fa";
 export default function CardAbsolute() {
   return (
     <>
-      <div className="flex flex-col gap-4 p-4 relative bg-primary w-fit shadow-2xl rounded-2xl">
+      <div className="flex flex-col gap-4 p-4 relative bg-primary w-[16rem] shadow-2xl rounded-2xl">
         <Image src={bali_ic} />
         <h3 className="font-extrabold text-lg">Liburan ke Bali</h3>
         <p className="font-sm">12-15 Desember 2023 | by MSA</p>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
 export default function Header() {
   const [header, setHeader] = useState(false);
@@ -48,7 +49,7 @@ export default function Header() {
             </div>
             <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-white">
               <li>
-                <a>Item 1</a>
+                <a>Beranda</a>
               </li>
               <li>
                 <a>Parent</a>
@@ -64,14 +65,20 @@ export default function Header() {
               <li>
                 <a>Item 3</a>
               </li>
+              <li className="border-2 rounded-xl flex flex-row relative">
+                <input type="text" placeholder="🔍 Cari destinasimu..." />
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl text-black">Travelco</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
+            <li className="border-2 rounded-xl flex flex-row relative">
+              <input type="text" placeholder="🔍 Cari destinasimu..." />
+            </li>
             <li>
-              <a>Item 1</a>
+              <a>Beranda</a>
             </li>
             <li>
               <details>

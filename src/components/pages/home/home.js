@@ -9,6 +9,10 @@ import { PlayButton } from "@/components/button-play";
 import YouTube from "react-youtube";
 
 export default function HomeSection() {
+  const handleClick = () => {
+    alert("Home Section");
+  };
+
   return (
     <div className="flex flex-col w-full h-auto gap-8 lg:gap-4">
       <div className="flex flex-row items-center justify-between gap-2 ">
@@ -18,10 +22,13 @@ export default function HomeSection() {
           </p>
         </div>
         <div className="flex flex-row gap-8">
-          <div className="p-2 bg-blue-500 text-white rounded-full">
+          <div className="p-2 bg-blue-500 text-white rounded-full lg:text-xl hover:cursor-pointer">
             <FaCartShopping />
           </div>
-          <div className="p-2 bg-blue-200 rounded-full text-blue-500">
+          <div
+            onClick={handleClick}
+            className="p-2 bg-blue-200 rounded-full text-blue-500 lg:text-xl hover:cursor-pointer"
+          >
             <FaUserLarge />
           </div>
         </div>
