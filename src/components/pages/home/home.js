@@ -21,7 +21,7 @@ export default function HomeSection() {
             ✈ • Explore the wonderful indonesia!
           </p>
         </div>
-        <div className="flex flex-row gap-8">
+        {/* <div className="flex flex-row gap-8">
           <div className="p-2 bg-blue-500 text-white rounded-full lg:text-xl hover:cursor-pointer">
             <FaCartShopping />
           </div>
@@ -31,7 +31,7 @@ export default function HomeSection() {
           >
             <FaUserLarge />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col gap-8 md:flex-row lg:items-center">
         <div className="space-y-4">

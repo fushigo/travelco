@@ -27,7 +27,7 @@ export default function LoginPage() {
       const roleCookies = response.data.data.role;
 
       const expired = new Date();
-      expired.setSeconds(expired.getSeconds() + 300);
+      expired.setSeconds(expired.getSeconds() + 30000000000000);
 
       setCookie("session.cookie", cookies, {
         expires: expired,
@@ -41,7 +41,7 @@ export default function LoginPage() {
 
       if (admiRole === "ADMIN") {
         Router.push({ pathname: "/dashboard" });
-      }else{
+      } else {
         Router.push({ pathname: "/" });
       }
     } catch (error) {
