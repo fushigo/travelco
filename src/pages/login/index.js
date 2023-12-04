@@ -1,11 +1,13 @@
 import { Header } from "@/components/header";
 import { FooterSection } from "@/components/pages/footer";
+import { LoginPage } from "@/components/pages/login";
+import axios from "axios";
 
-export default function Layout({ children }) {
+export default function Login() {
   return (
     <>
       <Header />
-      <div className="w-full h-auto">{children}</div>
+      <LoginPage />
       <FooterSection />
     </>
   );

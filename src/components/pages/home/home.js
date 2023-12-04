@@ -14,7 +14,7 @@ export default function HomeSection() {
   };
 
   return (
-    <div className="flex flex-col w-full h-auto gap-8 lg:gap-4">
+    <div id="home" className="flex flex-col w-full h-auto gap-8 lg:gap-4">
       <div className="flex flex-row items-center justify-between gap-2 ">
         <div className="py-3 rounded-full px-4 w-fit bg-blue-200">
           <p className="font-bold text-[11px] text-blue-600 font-jakarta sm:text-sm">
@@ -54,16 +54,16 @@ export default function HomeSection() {
           Mulai sekarang →
         </div>
         <div className="flex flex-row flex-wrap items-center gap-4">
-          <label for="my_modal_6" class="btn">
+          <label for="my_modal_6" className="btn">
             <FaPlay />
             Mulai Demo
           </label>
-          <input type="checkbox" id="my_modal_6" class="modal-toggle" />
-          <div class="modal" role="dialog">
+          <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+          <div className="modal" role="dialog">
             <div class="modal-box w-fit">
               <YouTube videoId="DiDJkl582dk" />
-              <div class="modal-action">
-                <label for="my_modal_6" class="btn">
+              <div className="modal-action">
+                <label for="my_modal_6" className="btn">
                   Close!
                 </label>
               </div>

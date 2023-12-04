@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
@@ -78,14 +79,14 @@ export default function Header() {
               <input type="text" placeholder="🔍 Cari destinasimu..." />
             </li>
             <li>
-              <a>Beranda</a>
+              <Link href={"/#home"}>Beranda</Link>
             </li>
             <li>
               <details>
                 <summary>Parent</summary>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <Link href={"/product"}>Product</Link>
                   </li>
                   <li>
                     <a>Submenu 2</a>

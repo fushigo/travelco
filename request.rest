@@ -1,0 +1,8 @@
+POST https://travel-api-lac.vercel.app/api/auth/login
+Content-Type: application/json
+x-api-key: travelco2023
+
+{
+    "username": "geusan31",
+    "password": "geusan31"
+}
