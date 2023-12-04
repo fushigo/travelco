@@ -7,11 +7,11 @@ import { PartnerCommponent } from "@/components/partner";
 import { FaPlay } from "react-icons/fa";
 import { PlayButton } from "@/components/button-play";
 import YouTube from "react-youtube";
+import { Modal, Button } from "flowbite-react";
+import { useState } from "react";
 
 export default function HomeSection() {
-  const handleClick = () => {
-    alert("Home Section");
-  };
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div id="home" className="flex flex-col w-full h-auto gap-8 lg:gap-4">
@@ -53,22 +53,35 @@ export default function HomeSection() {
         <div className="btn btn-ghost bg-secondary text-primary text-xl">
           Mulai sekarang →
         </div>
-        <div className="flex flex-row flex-wrap items-center gap-4">
-          <label for="my_modal_6" className="btn">
-            <FaPlay />
-            Mulai Demo
-          </label>
-          <input type="checkbox" id="my_modal_6" className="modal-toggle" />
-          <div className="modal" role="dialog">
-            <div class="modal-box w-fit">
-              <YouTube videoId="DiDJkl582dk" />
-              <div className="modal-action">
-                <label for="my_modal_6" className="btn">
-                  Close!
-                </label>
+        <div
+          className="flex flex-row flex-wrap items-center gap-4 hover:cursor-pointer"
+          onClick={() => setOpenModal(true)}
+        >
+          <PlayButton />
+          Play Demo
+        </div>
+
+        <div>
+          <Modal
+            className="w-full self-center"
+            show={openModal}
+            onClose={() => setOpenModal(false)}
+          >
+            <Modal.Header>Demos</Modal.Header>
+            <Modal.Body>
+              <div className="flex flex-col items-center justify-center relative w-full">
+                <YouTube
+                  className="w-full flex justify-center"
+                  videoId="DiDJkl582dk"
+                />
               </div>
-            </div>
-          </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button className="bg-black" onClick={() => setOpenModal(false)}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </div>
       <div className="w-full">
