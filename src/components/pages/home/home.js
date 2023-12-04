@@ -9,22 +9,29 @@ import { PlayButton } from "@/components/button-play";
 import YouTube from "react-youtube";
 
 export default function HomeSection() {
+  const handleClick = () => {
+    alert("Home Section");
+  };
+
   return (
-    <div className="flex flex-col w-full h-auto gap-8 lg:gap-4">
+    <div id="home" className="flex flex-col w-full h-auto gap-8 lg:gap-4">
       <div className="flex flex-row items-center justify-between gap-2 ">
         <div className="py-3 rounded-full px-4 w-fit bg-blue-200">
           <p className="font-bold text-[11px] text-blue-600 font-jakarta sm:text-sm">
             ✈ • Explore the wonderful indonesia!
           </p>
         </div>
-        <div className="flex flex-row gap-8">
-          <div className="p-2 bg-blue-500 text-white rounded-full">
+        {/* <div className="flex flex-row gap-8">
+          <div className="p-2 bg-blue-500 text-white rounded-full lg:text-xl hover:cursor-pointer">
             <FaCartShopping />
           </div>
-          <div className="p-2 bg-blue-200 rounded-full text-blue-500">
+          <div
+            onClick={handleClick}
+            className="p-2 bg-blue-200 rounded-full text-blue-500 lg:text-xl hover:cursor-pointer"
+          >
             <FaUserLarge />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col gap-8 md:flex-row lg:items-center">
         <div className="space-y-4">
@@ -47,16 +54,16 @@ export default function HomeSection() {
           Mulai sekarang →
         </div>
         <div className="flex flex-row flex-wrap items-center gap-4">
-          <label for="my_modal_6" class="btn">
+          <label for="my_modal_6" className="btn">
             <FaPlay />
             Mulai Demo
           </label>
-          <input type="checkbox" id="my_modal_6" class="modal-toggle" />
-          <div class="modal" role="dialog">
+          <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+          <div className="modal" role="dialog">
             <div class="modal-box w-fit">
               <YouTube videoId="DiDJkl582dk" />
-              <div class="modal-action">
-                <label for="my_modal_6" class="btn">
+              <div className="modal-action">
+                <label for="my_modal_6" className="btn">
                   Close!
                 </label>
               </div>

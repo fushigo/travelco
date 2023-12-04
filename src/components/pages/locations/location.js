@@ -21,38 +21,38 @@ export default function LocationSection() {
           update dan gak kudet lagi.
         </p>
         <Image className="sm:w-full" src={map_img} />
-        <div className="flex flex-row justify-center items-center w-full">
-          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center md:flex-row md:flex-nowrap">
+        <div className="flex flex-col justify-center items-center gap-8 w-full">
+          <div className="flex flex-row gap-4 w-full items-center justify-center md:justify-start md:flex-nowrap">
             <Icons icons={<FaLocationDot />} />
             <div>
-              <h4 className="text-center md:text-start font-bold  ">
+              <h4 className="text-start md:text-start font-bold  ">
                 Popular di dekatmu
               </h4>
-              <p className="text-center md:text-start ">
+              <p className="text-start md:text-start ">
                 Tempat pariwisata yang populer dan pasti dikenal semua orang
                 didekatmu
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center md:flex-row md:flex-nowrap">
+          <div className="flex flex-row gap-4 w-full items-center justify-center md:justify-start md:flex-nowrap">
             <Icons icons={<FaLocationDot />} />
             <div>
-              <h4 className="text-center md:text-start font-bold">
+              <h4 className="text-start md:text-start font-bold  ">
                 Popular di dekatmu
               </h4>
-              <p className="text-center md:text-start">
+              <p className="text-start md:text-start ">
                 Tempat pariwisata yang populer dan pasti dikenal semua orang
                 didekatmu
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/3 flex-wrap items-center justify-center md:flex-row md:flex-nowrap">
+          <div className="flex flex-row gap-4 w-full items-center justify-center md:justify-start md:flex-nowrap">
             <Icons icons={<FaLocationDot />} />
             <div>
-              <h4 className="text-center md:text-start font-bold">
+              <h4 className="text-start md:text-start font-bold  ">
                 Popular di dekatmu
               </h4>
-              <p className="text-center md:text-start">
+              <p className="text-start md:text-start ">
                 Tempat pariwisata yang populer dan pasti dikenal semua orang
                 didekatmu
               </p>
