@@ -2,13 +2,18 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { FaCartShopping, FaUserLarge } from "react-icons/fa6";
-import { getCookie } from "cookies-next";
+import { deleteCookie, getCookie } from "cookies-next";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const [header, setHeader] = useState(false);
   const cookies = getCookie("session.cookie");
+  const Router = useRouter();
+
   const handleClick = () => {
-    alert("Home Section");
+    deleteCookie("session.cookie");
+    deleteCookie("role.cookie");
+    Router.push({ pathname: "/" });
   };
 
   const scrollHeader = () => {
@@ -35,7 +40,7 @@ export default function Header() {
           : "flex fixed w-full bg-white"
       }
     >
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-white">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -151,7 +156,7 @@ export default function Header() {
             >
               {cookies ? (
                 <li>
-                  <a>Logout</a>
+                  <a onClick={handleClick}>Logout</a>
                 </li>
               ) : (
                 <>
