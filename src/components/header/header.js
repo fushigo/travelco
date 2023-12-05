@@ -7,8 +7,12 @@ import { useRouter } from "next/router";
 
 export default function Header() {
   const [header, setHeader] = useState(false);
-  const cookies = getCookie("session.cookie");
+  const [session, setSession] = useState(null);
   const Router = useRouter();
+
+  useEffect(() => {
+    setSession(getCookie("session.cookie"));
+  }, []);
 
   const handleClick = () => {
     deleteCookie("session.cookie");
@@ -66,15 +70,7 @@ export default function Header() {
               <Link href={"/"}>Beranda</Link>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <Link href={"/product"}>Product</Link>
             </li>
             <li>
               <a>Item 3</a>
@@ -150,25 +146,25 @@ export default function Header() {
                 />
               </div>
             </div>
-            <ul
+            <div
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {cookies ? (
-                <li>
-                  <a onClick={handleClick}>Logout</a>
-                </li>
+              {session ? (
+                <a className="btn" onClick={handleClick}>
+                  Logout
+                </a>
               ) : (
-                <>
-                  <li>
-                    <Link href={"/login"}>Login</Link>
-                  </li>
-                  <li>
-                    <a>SignUp</a>
-                  </li>
-                </>
+                <div className="flex flex-col gap-4">
+                  <Link className="btn" href={"/login"}>
+                    Login
+                  </Link>
+                  <Link className="btn" href={"/login"}>
+                    SignUp
+                  </Link>
+                </div>
               )}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
