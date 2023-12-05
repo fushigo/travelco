@@ -13,7 +13,7 @@ export default function Dashboard() {
     if (!cookies || getRole === "USER") {
       Router.push({ pathname: "/" });
     }
-  });
+  }, []);
 
   return (
     <div>

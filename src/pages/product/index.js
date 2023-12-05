@@ -6,8 +6,9 @@ export default function Product() {
   return (
     <>
       <Header />
-      <ProductPage />
-      <FooterSection />
+      <div className="flex justify-center pt-20">
+        <ProductPage />
+      </div>
     </>
   );
 }
