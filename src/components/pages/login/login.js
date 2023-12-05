@@ -22,6 +22,7 @@ export default function LoginPage() {
           "x-api-key": "travelco2023",
         },
       });
+
       console.log(response.data.token);
       const cookies = response.data.token;
       const roleCookies = response.data.data.role;
@@ -45,6 +46,11 @@ export default function LoginPage() {
         Router.push({ pathname: "/" });
       }
     } catch (error) {
+      if (error.response && error.response.status === 401) {
+        setError("Incorrect username or password");
+      } else {
+        setError("An error occurred during login");
+      }
       console.log(error);
     }
   }
@@ -74,6 +80,11 @@ export default function LoginPage() {
               onSubmit={submit}
             >
               <div>
+                {error && (
+                  <div className="text-red-500 text-sm font-medium">
+                    {error}
+                  </div>
+                )}
                 <label
                   for="username"
                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -91,6 +102,11 @@ export default function LoginPage() {
                 />
               </div>
               <div>
+                {error && (
+                  <div className="text-red-500 text-sm font-medium">
+                    {error}
+                  </div>
+                )}
                 <label
                   for="password"
                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

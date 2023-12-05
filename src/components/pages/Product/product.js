@@ -1,6 +1,22 @@
 import { CardProduct } from "@/components/card-product";
+import { getCookie } from "cookies-next";
+import { useEffect, useState } from "react";
 
 export default function ProductPage() {
+  const [session, setSession] = useState(false);
+
+  useEffect(() => {
+    setSession(getCookie("session.cookie"));
+  });
+
+  const click = () => {
+    if (!session) {
+      alert("anda belum login");
+    } else {
+      alert("anda sudah login");
+    }
+  };
+
   return (
     <div className="container flex flex-col items-center justify-center">
       <div>
@@ -13,7 +29,11 @@ export default function ProductPage() {
         </h1>
       </div>
       <div className="flex flex-row flex-wrap justify-center w-full h-auto gap-4 pt-8 md:justify-around">
-        <CardProduct title={"Paket Wisata Yogyakarta"} price={"Rp 200.000"} />
+        <CardProduct
+          title={"Paket Wisata Yogyakarta"}
+          price={"Rp 200.000"}
+          handleClick={click}
+        />
         <CardProduct title={"Paket Wisata Yogyakarta"} price={"Rp 200.000"} />
         <CardProduct title={"Paket Wisata Yogyakarta"} price={"Rp 200.000"} />
         <CardProduct title={"Paket Wisata Yogyakarta"} price={"Rp 200.000"} />

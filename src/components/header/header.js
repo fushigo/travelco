@@ -18,6 +18,7 @@ export default function Header() {
     deleteCookie("session.cookie");
     deleteCookie("role.cookie");
     Router.push({ pathname: "/" });
+    Router.reload({ pathname: "/" });
   };
 
   const scrollHeader = () => {
