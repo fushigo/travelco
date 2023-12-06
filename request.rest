@@ -6,3 +6,12 @@ x-api-key: travelco2023
     "username": "geusan31",
     "password": "geusan31"
 }
+
+###
+
+DELETE https://travel-api-lac.vercel.app/api/users/delete-user?id=31
+x-api-key: travelco2023
+
+###
+
+POST https://travel-api-lac.vercel.app/api/users/d?id=31

@@ -8,10 +8,12 @@ import { useRouter } from "next/router";
 export default function Header() {
   const [header, setHeader] = useState(false);
   const [session, setSession] = useState(null);
+  const [role, setRole] = useState(null);
   const Router = useRouter();
 
   useEffect(() => {
     setSession(getCookie("session.cookie"));
+    setRole(getCookie("role.cookie"));
   }, []);
 
   const handleClick = () => {
@@ -151,7 +153,16 @@ export default function Header() {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {session ? (
+              {session && role === "ADMIN" ? (
+                <div className="flex flex-col gap-4">
+                  <Link className="btn" href={"/dashboard"}>
+                    Dashboard
+                  </Link>
+                  <a className="btn" onClick={handleClick}>
+                    Logout
+                  </a>
+                </div>
+              ) : role === "USER" ? (
                 <a className="btn" onClick={handleClick}>
                   Logout
                 </a>

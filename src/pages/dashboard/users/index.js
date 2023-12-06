@@ -1,11 +1,12 @@
 import Loader from "@/components/common/loader";
 import { DashboardPage } from "@/components/pages/dashboard";
+import { UserPage } from "@/components/pages/dashboard/pages/users";
 import Layout from "@/layout";
 import { getCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export default function Dashboard() {
+export default function DashboardUser() {
   const cookies = getCookie("session.cookie");
   const getRole = getCookie("role.cookie");
   const Router = useRouter();
@@ -26,11 +27,11 @@ export default function Dashboard() {
     <Loader />
   ) : (
     <div>
-      <DashboardPage />
+      <UserPage />
     </div>
   );
 }
 
-Dashboard.getLayout = function getLayout(page) {
+DashboardUser.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
