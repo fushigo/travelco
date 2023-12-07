@@ -18,7 +18,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (!cookies || getRole === "USER") {
-      Router.push({ pathname: "/" });
+      Router.push("/");
     }
   }, []);
 
