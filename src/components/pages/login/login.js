@@ -1,7 +1,6 @@
 import axios from "axios";
 import { setCookie, getCookie } from "cookies-next";
-import Image from "next/image";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function LoginPage() {
