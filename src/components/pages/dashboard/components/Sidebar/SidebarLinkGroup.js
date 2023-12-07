@@ -1,6 +1,6 @@
-import { ReactNode, useState } from "react";
+import React, { ReactNode, useState } from "react";
 
-const SidebarLinkGroup = ({ children, activeCondition }) => {
+const SidebarLinkGroup = React.memo(({ children, activeCondition }) => {
   const [open, setOpen] = useState(activeCondition);
 
   const handleClick = () => {
@@ -8,6 +8,6 @@ const SidebarLinkGroup = ({ children, activeCondition }) => {
   };
 
   return <li>{children(handleClick, open)}</li>;
-};
+});
 
 export default SidebarLinkGroup;

@@ -1,22 +1,42 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { deleteCookie } from "cookies-next";
+import { deleteCookie, getCookie } from "cookies-next";
 import { useRouter } from "next/router";
+import axios from "axios";
 
-const DropdownUser = () => {
+const DropdownUser = React.memo(() => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [username, setUsername] = useState("");
+  const Router = useRouter();
+  const id = getCookie("id.cookie");
+
+  async function getUser(userId) {
+    try {
+      const result = await axios.get(
+        `https://travelco-api-zeta.vercel.app/api/users/get-user-id?id=${userId}`
+      );
+
+      setUsername(result.data.data.username);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    if (id) {
+      getUser(id);
+    }
+  }, [id]);
 
   const trigger = useRef(null);
   const dropdown = useRef(null);
 
-  const Router = useRouter();
-
   const handleClick = () => {
     deleteCookie("session.cookie");
     deleteCookie("role.cookie");
+    deleteCookie("id.cookie");
     Router.push({ pathname: "/" });
-    Router.reload({ pathname: "/" });
   };
 
   // close on click outside
@@ -55,9 +75,9 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            Thomas Anree
+            {username}
           </span>
-          <span className="block text-xs">UX Designer</span>
+          <span className="block text-xs">Admin</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
@@ -195,6 +215,6 @@ const DropdownUser = () => {
       {/* <!-- Dropdown End --> */}
     </div>
   );
-};
+});
 
 export default DropdownUser;
