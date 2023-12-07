@@ -5,7 +5,7 @@ import { deleteCookie, getCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import axios from "axios";
 
-const DropdownUser = React.memo(() => {
+const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [username, setUsername] = useState("");
   const Router = useRouter();
@@ -215,6 +215,6 @@ const DropdownUser = React.memo(() => {
       {/* <!-- Dropdown End --> */}
     </div>
   );
-});
+};
 
 export default DropdownUser;

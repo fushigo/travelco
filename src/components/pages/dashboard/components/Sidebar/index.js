@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import SidebarLinkGroup from "./SidebarLinkGroup";
 import Image from "next/image";
 
-const Sidebar = React.memo(({ sidebarOpen, setSidebarOpen }) => {
+const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const pathname = usePathname();
 
   const trigger = useRef(null);
@@ -668,6 +668,6 @@ const Sidebar = React.memo(({ sidebarOpen, setSidebarOpen }) => {
       </div>
     </aside>
   );
-});
+};
 
 export default Sidebar;
