@@ -1,21 +1,34 @@
 import { useEffect, useState } from "react";
 import TableThree from "../../components/Tables/TableThree";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function UserPage() {
   const [userData, setUserData] = useState([]);
 
+  const Router = useRouter();
+
   useEffect(() => {
     async function getUser() {
+      let headers = {};
+
+      let token = localStorage.getItem("token");
+      if (token !== null) headers.Authorization = `Bearer ${token}`;
+
+      let config = {
+        headers: headers,
+      };
+
       try {
-        const result = await axios({
-          method: "GET",
-          url: "https://travel-api-lac.vercel.app/api/users/get-user",
-        });
-        console.log(result);
-        setUserData(result.data.data);
+        const response = await axios.get(
+          "https://travelco-api-zeta.vercel.app/api/users/get-user",
+          config
+        );
+        // setUserData(response.data);
+        console.log(response.data.data);
+        setUserData(response.data.data);
       } catch (error) {
-        console.log(error);
+        return error.response;
       }
     }
 
@@ -23,24 +36,45 @@ export default function UserPage() {
   }, []);
 
   async function deleteUser(id) {
+    let headers = {
+      "x-api-key": "travelco2023",
+    };
+    let token = localStorage.getItem("token");
+
+    if (token !== null) headers.Authorization = `Bearer ${token}`;
+
+    let config = {
+      headers: headers,
+    };
+
     try {
-      console.log(id);
-      await axios({
-        method: "DELETE",
-        url: `https://travel-api-lac.vercel.app/api/users/delete-user?id=${id}`,
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": "travelco2023",
-        },
-      });
+      const response = await axios.delete(
+        `https://travelco-api-zeta.vercel.app/api/users/delete-user?id=${id}`,
+        config
+      );
+      Router.reload({ pathname: "/" });
     } catch (error) {
-      console.log(error);
+      return error.response;
     }
+  }
+
+  function EditUser(id) {
+    console.log(id);
+    Router.push(`/dashboard/users/editUser?id=${id}`);
+  }
+
+  function CreateUser() {
+    Router.push("/dashboard/users/addUser");
   }
 
   return (
     <div>
-      <TableThree packageData={userData} handleDelete={deleteUser} />
+      <TableThree
+        packageData={userData}
+        handleDelete={deleteUser}
+        handleEdit={EditUser}
+        handleCreate={CreateUser}
+      />
     </div>
   );
 }

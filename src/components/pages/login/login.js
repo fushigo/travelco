@@ -15,7 +15,7 @@ export default function LoginPage() {
     try {
       const response = await axios({
         method: "POST",
-        url: "https://travel-api-lac.vercel.app/api/auth/login",
+        url: "https://travelco-api-zeta.vercel.app/api/auth/login",
         data: { username, password },
         headers: {
           Accept: "application/json",

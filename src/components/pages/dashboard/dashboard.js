@@ -10,7 +10,7 @@ export default function DashboardPage() {
       try {
         const userCount = await axios({
           method: "GET",
-          url: "https://travel-api-lac.vercel.app/api/users/get-user",
+          url: "https://travelco-api-zeta.vercel.app/api/users/get-user",
         });
         setUser(userCount.data.totalData);
       } catch (error) {
