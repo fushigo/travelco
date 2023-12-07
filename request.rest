@@ -1,4 +1,4 @@
-POST https://travel-api-lac.vercel.app/api/auth/login
+POST https://travelco-api-zeta.vercel.app/api/auth/login
 Content-Type: application/json
 x-api-key: travelco2023
 
@@ -6,3 +6,34 @@ x-api-key: travelco2023
     "username": "geusan31",
     "password": "geusan31"
 }
+
+###
+GET https://travelco-api-zeta.vercel.app/api/users/get-user
+
+
+###
+POST https://travelco-api-zeta.vercel.app/api/users/add-user
+Content-Type: application/json
+x-api-key: travelco2023
+
+{
+    "nama": "Geusan Edurais",
+    "username": "geusan31",
+    "password": "geusan31",
+    "email": "geusan31@gmail.com",
+    "password": "geusan31"
+}
+
+###
+PATCH https://travelco-api-zeta.vercel.app/api/users/update-user?id=42
+Content-Type: application/json
+x-api-key: travelco2023
+
+{
+    "role": "ADMIN"
+}
+
+###
+##DELETE USER
+DELETE  https://travelco-api-zeta.vercel.app/api/users/delete-user?id=37
+x-api-key: travelco2023
