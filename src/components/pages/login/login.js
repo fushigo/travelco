@@ -40,8 +40,12 @@ export default function LoginPage() {
 
       const admiRole = getCookie("role.cookie");
 
+      const id = response.data.data.id;
+
       if (admiRole === "ADMIN") {
-        Router.push({ pathname: "/dashboard" });
+        console.log(response.data.data.id);
+        setCookie("id.cookie", id);
+        Router.push(`/dashboard`);
       } else {
         Router.push({ pathname: "/" });
       }

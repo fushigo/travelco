@@ -1,13 +1,29 @@
 import { CardProduct } from "@/components/card-product";
+import axios from "axios";
 import { getCookie } from "cookies-next";
 import { useEffect, useState } from "react";
 
 export default function ProductPage() {
   const [session, setSession] = useState(false);
+  const [productData, setProductData] = useState([]);
+
+  async function getProdutc() {
+    const result = await axios.get(
+      "https://travelco-api-zeta.vercel.app/api/products/get-product",
+      {
+        headers: {
+          "x-api-key": "travelco2023",
+        },
+      }
+    );
+    console.log(result.data.data);
+    setProductData(result.data.data);
+  }
 
   useEffect(() => {
+    getProdutc();
     setSession(getCookie("session.cookie"));
-  });
+  }, []);
 
   const click = () => {
     if (!session) {
@@ -29,14 +45,14 @@ export default function ProductPage() {
         </h1>
       </div>
       <div className="flex flex-row flex-wrap justify-center w-full h-auto gap-4 pt-8 md:justify-around">
-        <CardProduct
-          title={"Paket Wisata Yogyakarta"}
-          price={"Rp 200.000"}
-          handleClick={click}
-        />
-        <CardProduct title={"Paket Wisata Yogyakarta"} price={"Rp 200.000"} />
-        <CardProduct title={"Paket Wisata Yogyakarta"} price={"Rp 200.000"} />
-        <CardProduct title={"Paket Wisata Yogyakarta"} price={"Rp 200.000"} />
+        {productData.map((productItem, key) => (
+          <CardProduct
+            key={key}
+            title={productItem.nama}
+            price={"IDR " + productItem.harga}
+            handleClick={click}
+          />
+        ))}
       </div>
     </div>
   );
