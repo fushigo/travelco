@@ -4,15 +4,13 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 
-export default function CreateUserPage() {
+export default function AddProductPage() {
   const [nama, setNama] = useState("");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [harga, setHarga] = useState("");
 
   const Router = useRouter();
 
-  async function createUser(nama, username, email, password) {
+  async function createUser(nama, harga) {
     let headers = {
       "x-api-key": "travelco2023",
     };
@@ -22,14 +20,12 @@ export default function CreateUserPage() {
 
     let data = {
       nama: nama,
-      username: username,
-      email: email,
-      password: password,
+      harga: harga,
     };
 
     try {
       const response = await axios.post(
-        `https://travelco-api-zeta.vercel.app/api/users/add-user`,
+        `https://travelco-api-zeta.vercel.app/api/products/add-product`,
         data,
         {
           headers: headers,
@@ -42,7 +38,7 @@ export default function CreateUserPage() {
         icon: "success",
         timer: 2000,
       });
-      Router.push({ pathname: "/dashboard/users" });
+      Router.push({ pathname: "/dashboard/product" });
     } catch (error) {
       return error.response;
     }
@@ -50,7 +46,7 @@ export default function CreateUserPage() {
 
   function submit(e) {
     e.preventDefault();
-    createUser(nama, username, email, password);
+    createUser(nama, harga);
   }
 
   return (
@@ -75,43 +71,18 @@ export default function CreateUserPage() {
           </div>
           <div>
             <div className="mb-2 block">
-              <Label htmlFor="username" value="username" />
+              <Label htmlFor="harga" value="harga" />
             </div>
             <TextInput
-              onChange={(e) => setUsername(e.target.value)}
-              id="username"
+              onChange={(e) => setHarga(e.target.value)}
+              id="harga"
               type="text"
-              placeholder="username"
-              value={username}
+              placeholder="harga"
+              value={harga}
+              pattern="[0-9]*"
               required
             />
           </div>
-        </div>
-
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="email1" value="email" />
-          </div>
-          <TextInput
-            onChange={(e) => setEmail(e.target.value)}
-            id="email1"
-            type="email"
-            placeholder="name@flowbite.com"
-            value={email}
-            required
-          />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="password" value="password" />
-          </div>
-          <TextInput
-            onChange={(e) => setPassword(e.target.value)}
-            id="password"
-            type="password"
-            value={password}
-            required
-          />
         </div>
         <Button className="text-white bg-secondary" type="submit">
           Create

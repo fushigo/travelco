@@ -4,8 +4,16 @@ import { useEffect, useState } from "react";
 
 export default function DashboardPage() {
   const [user, setUser] = useState("");
+  const [product, setProduct] = useState("");
 
   useEffect(() => {
+    async function countProduct() {
+      const productCount = await axios({
+        method: "GET",
+        url: "https://travelco-api-zeta.vercel.app/api/products/get-product",
+      });
+      setProduct(productCount.data.totalData);
+    }
     async function countUser() {
       try {
         const userCount = await axios({
@@ -18,6 +26,7 @@ export default function DashboardPage() {
       }
     }
     countUser();
+    countProduct();
   }, []); // Array dependency kosong
 
   return (
@@ -64,7 +73,7 @@ export default function DashboardPage() {
           />
         </svg>
       </CardDataStats>
-      <CardDataStats title="Total Product" total="2.450" rate="2.59%" levelUp>
+      <CardDataStats title="Total Product" total={product} rate="2.59%" levelUp>
         <svg
           className="fill-secondary dark:fill-white"
           width="22"

@@ -2,6 +2,7 @@ import axios from "axios";
 import { Button, Select, Label, TextInput } from "flowbite-react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 export default function EditUserPage() {
   const [nama, setNama] = useState("");
@@ -60,6 +61,12 @@ export default function EditUserPage() {
         }
       );
       console.log(response);
+      Swal.fire({
+        title: "Success",
+        text: "Berhasil menambahkan data!",
+        icon: "success",
+        timer: 2000,
+      });
       Router.push({ pathname: "/dashboard/users" });
     } catch (error) {
       return error.response;
