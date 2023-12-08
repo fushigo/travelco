@@ -43,7 +43,7 @@ export default function Header() {
     <div
       className={
         header
-          ? "fixed w-full flex border-b-2 z-50 border-gray-200 bg-white"
+          ? "fixed w-full flex border-b-2 border-slate-300 z-50 border-gray-200 bg-white"
           : "flex fixed w-full bg-white"
       }
     >

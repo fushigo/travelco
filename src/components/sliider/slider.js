@@ -22,7 +22,7 @@ export default function Slider() {
         },
         768: {
           slidesPerView: 3,
-          spaceBetween: 200,
+          spaceBetween: 50,
         },
         1024: {
           slidesPerView: 3,
@@ -36,7 +36,7 @@ export default function Slider() {
         <TestiCard
           img={man1}
           stars={stars}
-          name={"Juldan Willy"}
+          name={"Juldan Willy F"}
           text={"Travelco pelayanan baik dan para wokers sangat ramah"}
           who={"Traveler"}
         />
@@ -45,7 +45,7 @@ export default function Slider() {
         <TestiCard
           img={man2}
           stars={stars}
-          name={"Juldan Willy"}
+          name={"Geusan Edurais A"}
           text={"Travelco pelayanan baik dan para wokers sangat ramah"}
           who={"Traveler"}
         />
@@ -54,7 +54,7 @@ export default function Slider() {
         <TestiCard
           img={man3}
           stars={stars}
-          name={"Juldan Willy"}
+          name={"Yoga Irgi K"}
           text={"Travelco pelayanan baik dan para wokers sangat ramah"}
           who={"Traveler"}
         />
