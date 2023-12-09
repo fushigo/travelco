@@ -79,9 +79,12 @@ export default function Header() {
           </ul>
         </div>
         <div className="flex-1">
-          <a href="/" className="btn btn-ghost text-xl w-[170px] h-[50px] z-99">
+          <Link
+            href="/"
+            className="btn btn-ghost text-xl w-[170px] h-[50px] z-99"
+          >
             <Image className="w-full" src={logo} />
-          </a>
+          </Link>
           <div className="navbar-center hidden w-full items-center -ml-34 justify-center lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
