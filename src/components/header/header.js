@@ -171,7 +171,7 @@ export default function Header() {
                   <Link className="btn" href={"/login"}>
                     Login
                   </Link>
-                  <Link className="btn" href={"/login"}>
+                  <Link className="btn" href={"/signup"}>
                     SignUp
                   </Link>
                 </div>
