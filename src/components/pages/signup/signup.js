@@ -1,69 +1,55 @@
+import Link from "next/link";
 import axios from "axios";
 import { setCookie, getCookie } from "cookies-next";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { Checkbox, Label } from "flowbite-react";
+import Swal from "sweetalert2";
 
-export default function LoginPage() {
+export default function SignUpPage() {
+  const [nama, setNama] = useState("");
+  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [aggre, setAggre] = useState(false);
   const [error, setError] = useState("");
 
   const Router = useRouter();
 
-  async function Login(username, password) {
-    try {
-      const response = await axios({
-        method: "POST",
-        url: "https://travelco-api-zeta.vercel.app/api/auth/login",
-        data: { username, password },
-        headers: {
-          Accept: "application/json",
-          "x-api-key": "travelco2023",
-        },
+  async function Signup(nama, username, email, password) {
+    if (!aggre) {
+      Swal.fire({
+        icon: "error",
+        title: "Perhatian!",
+        text: "Harap setuju dengan syarat dan ketentuan",
       });
+    } else {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: "https://travelco-api-zeta.vercel.app/api/users/add-user",
+          data: { nama, username, email, password },
+          headers: {
+            Accept: "application/json",
+            "x-api-key": "travelco2023",
+          },
+        });
 
-      console.log(response.data.token);
-      const cookies = response.data.token;
-      const roleCookies = response.data.data.role;
-
-      const expired = new Date();
-      expired.setSeconds(expired.getSeconds() + 60 * 24 * 60 * 7);
-
-      setCookie("session.cookie", cookies, {
-        expires: expired,
-      });
-
-      setCookie("role.cookie", roleCookies, {
-        expires: expired,
-      });
-
-      localStorage.setItem("token", cookies);
-
-      const admiRole = getCookie("role.cookie");
-
-      const id = response.data.data.id;
-
-      if (admiRole === "ADMIN") {
-        console.log(response.data.data.id);
-        setCookie("id.cookie", id);
-        Router.push(`/dashboard`);
-      } else {
-        Router.push({ pathname: "/" });
+        Router.push("/login");
+      } catch (error) {
+        if (error.response && error.response.status === 401) {
+          setError("Username already used. Please try again");
+        } else {
+          setError("An error occurred during signup");
+        }
+        console.log(error);
       }
-    } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setError("Incorrect username or password");
-      } else {
-        setError("An error occurred during login");
-      }
-      console.log(error);
     }
   }
 
   function submit(e) {
     e.preventDefault();
-    Login(username, password);
+    Signup(nama, username, email, password);
   }
 
   return (
@@ -75,13 +61,30 @@ export default function LoginPage() {
         <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-              Sign in to your account
+              Sign up to create account
             </h1>
             <form
               className="space-y-4 md:space-y-6"
               method="POST"
               onSubmit={submit}
             >
+              <div>
+                <label
+                  for="nama"
+                  className="block mb-2 text-sm font-medium text-gray-900"
+                >
+                  Your Name
+                </label>
+                <input
+                  onChange={(e) => setNama(e.target.value)}
+                  type="text"
+                  name="nama"
+                  id="nama"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  placeholder="name"
+                  required=""
+                />
+              </div>
               <div>
                 {error && (
                   <div className="text-red-500 text-sm font-medium">
@@ -100,7 +103,24 @@ export default function LoginPage() {
                   name="username"
                   id="username"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                  placeholder="name@company.com"
+                  placeholder="John Doe "
+                  required=""
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  className="block mb-2 text-sm font-medium text-gray-900"
+                >
+                  Your Email
+                </label>
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  placeholder="name@gmail.com"
                   required=""
                 />
               </div>
@@ -128,41 +148,37 @@ export default function LoginPage() {
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="remember"
-                      aria-describedby="remember"
-                      type="checkbox"
-                      className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300"
-                      required=""
+                  <div className="flex items-center gap-2">
+                    <Checkbox
+                      onChange={(e) => setAggre(e.target.checked)}
+                      id="accept"
+                      defaultChecked
                     />
-                  </div>
-                  <div className="ml-3 text-sm">
-                    <label for="remember" className="text-gray-500">
-                      Remember me
-                    </label>
+                    <Label htmlFor="accept" className="flex">
+                      I agree with the&nbsp;
+                      <a
+                        href="#"
+                        className="text-cyan-600 hover:underline dark:text-cyan-500"
+                      >
+                        terms and conditions
+                      </a>
+                    </Label>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="text-sm font-medium text-primary-600 hover:underline"
-                >
-                  Forgot password?
-                </a>
               </div>
               <button
                 type="submit"
                 className="w-full text-white bg-blue-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
               >
-                Sign in
+                Sign up
               </button>
               <p className="text-sm font-light text-gray-500">
-                Don’t have an account yet?{" "}
+                Alerady have an account ?{" "}
                 <Link
-                  href="/signup"
+                  href="/login"
                   className="font-medium text-primary-600 hover:underline"
                 >
-                  Sign up
+                  Sign in
                 </Link>
               </p>
             </form>
