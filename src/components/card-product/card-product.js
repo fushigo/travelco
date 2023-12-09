@@ -1,5 +1,5 @@
 import Image from "next/image";
-import card_image from "@/asset/labuanbajo.png";
+import card_image from "@/asset/labuanbajo.svg";
 import { Button } from "flowbite-react";
 
 export default function CardProduct({ title, price, handleClick }) {
@@ -7,6 +7,7 @@ export default function CardProduct({ title, price, handleClick }) {
     <div className="flex flex-col w-[10rem] gap-4 bg-white shadow-2xl rounded-xl lg:w-[15rem]">
       <div>
         <Image
+          alt="travelco"
           className="w-full object-fill h-[10rem] rounded-t-xl lg:w-[15rem]"
           src={card_image}
         />

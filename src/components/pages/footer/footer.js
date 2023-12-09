@@ -19,7 +19,11 @@ export default function FooterSection() {
           </p>
         </div>
         <div className="mt-8 md:mt-0">
-          <Image className="sm:w-full md:h-[22rem] md:w-[50rem]" src={one} />
+          <Image
+            alt="travelco"
+            className="sm:w-full md:h-[22rem] md:w-[50rem]"
+            src={one}
+          />
         </div>
       </div>
       <div className="p-4 flex flex-col gap-4 container md:flex-row md:gap-12 lg:px-12">

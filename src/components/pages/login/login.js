@@ -27,7 +27,7 @@ export default function LoginPage() {
       const roleCookies = response.data.data.role;
 
       const expired = new Date();
-      expired.setSeconds(expired.getSeconds() + 30000000000000);
+      expired.setSeconds(expired.getSeconds() + 60 * 24 * 60 * 7);
 
       setCookie("session.cookie", cookies, {
         expires: expired,
@@ -36,6 +36,8 @@ export default function LoginPage() {
       setCookie("role.cookie", roleCookies, {
         expires: expired,
       });
+
+      localStorage.setItem("token", cookies);
 
       const admiRole = getCookie("role.cookie");
 
@@ -66,10 +68,7 @@ export default function LoginPage() {
   return (
     <div className="bg-slate-100">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <a
-          href="#"
-          className="flex items-center mb-6 text-2xl font-semibold text-gray-900"
-        >
+        <a className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
           Travelco
         </a>
         <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
@@ -138,10 +137,7 @@ export default function LoginPage() {
                     />
                   </div>
                   <div className="ml-3 text-sm">
-                    <label
-                      for="remember"
-                      className="text-gray-500"
-                    >
+                    <label for="remember" className="text-gray-500">
                       Remember me
                     </label>
                   </div>

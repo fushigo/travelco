@@ -11,7 +11,7 @@ export default function CardAbsolute() {
   return (
     <>
       <div className="flex flex-col gap-4 p-4 relative bg-primary w-[16rem] shadow-2xl rounded-2xl">
-        <Image src={bali_ic} />
+        <Image alt="travelco" src={bali_ic} />
         <h3 className="font-extrabold text-lg">Liburan ke Bali</h3>
         <p className="font-sm">12-15 Desember 2023 | by MSA</p>
         <div className="flex flex-row gap-x-4 items-center justify-start relative">
@@ -26,7 +26,7 @@ export default function CardAbsolute() {
           </div>
           <div className="flex flex-row items-start justify-center py-4 gap-2 absolute rounded-xl -right-24 w-[10rem] bg-primary shadow-2xl">
             <div>
-              <Image className="rounded-full" src={bendera_ic} />
+              <Image alt="travelco" className="rounded-full" src={bendera_ic} />
             </div>
             <div className="flex flex-col">
               <p className="text-sm">Ongoing</p>

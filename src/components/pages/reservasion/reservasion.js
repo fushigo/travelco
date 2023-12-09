@@ -5,13 +5,23 @@ export default function ReservationSection() {
   return (
     <div className="flex flex-col w-full h-auto gap-8">
       <div>
-        <h2 className="font-bold text-xl text-secondary">RESERVASI TEMPAT</h2>
-        <h3 className="font-extrabold text-4xl leading-tight">
+        <h2 data-aos="fade-right" className="font-bold text-xl text-secondary">
+          RESERVASI TEMPAT
+        </h2>
+        <h3
+          data-aos="fade-right"
+          data-aos-delay="300"
+          className="font-extrabold text-4xl leading-tight"
+        >
           Gak mau ngantri? reservasi aja!
         </h3>
       </div>
       <div className="md:flex-row md:flex justify-between space-y-8 items-center md:gap-48">
-        <div className="flex flex-col w-full gap-y-8">
+        <div
+          data-aos="fade-right"
+          data-aos-delay="300"
+          className="flex flex-col w-full gap-y-8"
+        >
           <TextIcon
             number={1}
             title={"Cari tempat yang kamu mau"}
@@ -32,7 +42,11 @@ export default function ReservationSection() {
             }
           />
         </div>
-        <div className="w-full xl:w-[40rem]">
+        <div
+          data-aos="zoom-in-left"
+          data-aos-delay="300"
+          className="w-full xl:w-[40rem]"
+        >
           <CardAbsolute />
         </div>
       </div>
