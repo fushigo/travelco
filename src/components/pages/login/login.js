@@ -1,5 +1,6 @@
 import axios from "axios";
 import { setCookie, getCookie } from "cookies-next";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -157,12 +158,12 @@ export default function LoginPage() {
               </button>
               <p className="text-sm font-light text-gray-500">
                 Don’t have an account yet?{" "}
-                <a
-                  href="#"
+                <Link
+                  href="/signup"
                   className="font-medium text-primary-600 hover:underline"
                 >
                   Sign up
-                </a>
+                </Link>
               </p>
             </form>
           </div>
