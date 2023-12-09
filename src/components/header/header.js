@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaSearch } from "react-icons/fa";
-import { FaCartShopping, FaUserLarge } from "react-icons/fa6";
 import { deleteCookie, getCookie } from "cookies-next";
 import { useRouter } from "next/router";
+import logo from "@/asset/TRAVELCO-F.svg";
+import Image from "next/image";
 
 export default function Header() {
   const [header, setHeader] = useState(false);
@@ -19,6 +19,7 @@ export default function Header() {
   const handleClick = () => {
     deleteCookie("session.cookie");
     deleteCookie("role.cookie");
+    localStorage.removeItem("token");
     Router.push({ pathname: "/" });
     Router.reload({ pathname: "/" });
   };
@@ -75,23 +76,22 @@ export default function Header() {
             <li>
               <Link href={"/product"}>Product</Link>
             </li>
-            <li>
-              <a>Item 3</a>
-            </li>
           </ul>
         </div>
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Travelco</a>
-          <div className="navbar-center hidden w-full items-center justify-center lg:flex">
+          <Link
+            href="/"
+            className="btn btn-ghost text-xl w-[170px] h-[50px] z-99"
+          >
+            <Image className="w-full" src={logo} />
+          </Link>
+          <div className="navbar-center hidden w-full items-center -ml-34 justify-center lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
                 <Link href={"/"}>Beranda</Link>
               </li>
               <li>
                 <Link href={"/product"}>Product</Link>
-              </li>
-              <li>
-                <a>Item 3</a>
               </li>
             </ul>
           </div>

@@ -78,12 +78,17 @@ export default function DashboardProductPage() {
     Router.push("/dashboard/product/addProduct");
   }
 
+  async function EditProduct(id) {
+    Router.push(`/dashboard/product/editProduct?id=${id}`);
+  }
+
   return (
     <div>
       <ProductTable
         packageData={productData}
         handleDelete={deletepProduct}
         handleCreate={AddProduct}
+        handleEdit={EditProduct}
       />
     </div>
   );

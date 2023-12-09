@@ -21,8 +21,8 @@ export default function Slider() {
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 3,
-          spaceBetween: 50,
+          slidesPerView: 2,
+          spaceBetween: 30,
         },
         1024: {
           slidesPerView: 3,
@@ -55,6 +55,15 @@ export default function Slider() {
           img={man3}
           stars={stars}
           name={"Yoga Irgi K"}
+          text={"Travelco pelayanan baik dan para wokers sangat ramah"}
+          who={"Traveler"}
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <TestiCard
+          img={man3}
+          stars={stars}
+          name={"Deland Arjuna"}
           text={"Travelco pelayanan baik dan para wokers sangat ramah"}
           who={"Traveler"}
         />

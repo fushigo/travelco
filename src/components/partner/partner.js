@@ -7,9 +7,9 @@ export default function PartnerCommponent() {
   return (
     <>
       <div className="flex flex-row justify-center items-center gap-8">
-        <Image src={partner_ic1} />
-        <Image src={partner_ic2} />
-        <Image src={partner_ic3} />
+        <Image alt="travelco" src={partner_ic1} />
+        <Image alt="travelco" src={partner_ic2} />
+        <Image alt="travelco" src={partner_ic3} />
       </div>
     </>
   );

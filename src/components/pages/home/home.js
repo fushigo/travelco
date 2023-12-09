@@ -8,22 +8,39 @@ import { FaPlay } from "react-icons/fa";
 import { PlayButton } from "@/components/button-play";
 import YouTube from "react-youtube";
 import { Modal, Button } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function HomeSection() {
   const [openModal, setOpenModal] = useState(false);
+  const [modalPlacement, setModalPlacement] = useState("center");
+  const Router = useRouter();
+
+  const handleClick = () => {
+    Router.push("/login");
+  };
+
+  useEffect(() => {
+    setModalPlacement("center");
+    AOS.init();
+  }, []);
 
   return (
     <div id="home" className="flex flex-col w-full h-auto gap-8 lg:gap-4">
       <div className="flex flex-row items-center justify-between gap-2 ">
-        <div className="py-3 rounded-full px-4 w-fit bg-blue-200">
+        <div
+          data-aos="fade-right"
+          className="py-3 rounded-full px-4 w-fit bg-blue-200"
+        >
           <p className="font-bold text-[11px] text-blue-600 font-jakarta sm:text-sm">
             ✈ • Explore the wonderful indonesia!
           </p>
         </div>
       </div>
       <div className="flex flex-col gap-8 md:flex-row lg:items-center">
-        <div className="space-y-4">
+        <div data-aos="zoom-in-right" className="space-y-4">
           <h1 className="text-4xl font-extrabold font-jakarta leading-tight lg:text-6xl">
             Liburan & nikmati <span className="text-secondary">tempatbaru</span>{" "}
             di indonesia <span className="font-sans">🏝</span>
@@ -34,16 +51,30 @@ export default function HomeSection() {
             media ✨
           </p>
         </div>
-        <div className="w-full sm:flex sm:justify-center">
-          <Image className="bg-transparent sm:w-1/2 md:w-3/5" src={hero_icon} />
+        <div
+          data-aos="fade-up-left"
+          className="w-full sm:flex sm:justify-center"
+        >
+          <Image
+            alt="travelco"
+            className="bg-transparent sm:w-1/2 md:w-3/5"
+            src={hero_icon}
+          />
         </div>
       </div>
       <div className="flex flex-row justify-center gap-8 flex-wrap items-center md:justify-start">
-        <div className="btn btn-ghost bg-secondary text-primary text-xl">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="300"
+          className="btn btn-ghost bg-secondary text-primary text-xl"
+          onClick={handleClick}
+        >
           Mulai sekarang →
         </div>
         <div
-          className="flex flex-row flex-wrap justify-center items-center gap-4 hover:cursor-pointer"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          className="flex flex-row flex-wrap justify-center items-center gap-4 hover:cursor-pointer w-fit"
           onClick={() => setOpenModal(true)}
         >
           <PlayButton />
@@ -52,11 +83,12 @@ export default function HomeSection() {
 
         <div>
           <Modal
-            className="w-full self-center"
+            className="backdrop-blur-sm w-full xl:w-1/2"
+            position={modalPlacement}
             show={openModal}
             onClose={() => setOpenModal(false)}
           >
-            <Modal.Header>Demos</Modal.Header>
+            <Modal.Header>Demo Video</Modal.Header>
             <Modal.Body>
               <div className="flex flex-col items-center justify-center relative w-full">
                 <YouTube

@@ -5,10 +5,12 @@ import axios from "axios";
 
 export default function Login() {
   return (
-    <>
+    <div>
       <Header />
-      <LoginPage />
+      <div className="py-12">
+        <LoginPage />
+      </div>
       <FooterSection />
-    </>
+    </div>
   );
 }
