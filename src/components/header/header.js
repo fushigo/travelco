@@ -86,7 +86,11 @@ export default function Header() {
     >
       <div className="navbar bg-white">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost bg-white lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -104,7 +108,7 @@ export default function Header() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm bg-white dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
           >
             <li>
               <Link href={"/"}>Beranda</Link>
