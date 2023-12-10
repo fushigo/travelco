@@ -47,7 +47,10 @@ export default function CartPage() {
   }
 
   async function deleteCart(Id) {
-    console.log(Id);
+    console.log("productId" + Id);
+    console.log("userId" + userid);
+
+    let token = localStorage.getItem("token");
 
     Swal.fire({
       title: "Are you sure?",
@@ -76,7 +79,7 @@ export default function CartPage() {
           });
           Router.reload();
         } catch (error) {
-          return error.response;
+          console.log(error);
         }
       }
     });

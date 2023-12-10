@@ -33,7 +33,7 @@ export default function ProductPage() {
 
   const click = (productId) => {
     if (!session) {
-      alert("anda belum login");
+      Router.push("/login");
     } else {
       addCart(userId, productId, defaultQuantity);
     }
