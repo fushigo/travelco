@@ -81,7 +81,7 @@ export default function Header() {
       className={
         header
           ? "fixed w-full flex border-b-2 border-slate-300 z-50 border-gray-200 bg-white"
-          : "flex fixed w-full bg-white"
+          : "flex fixed w-full bg-white z-50"
       }
     >
       <div className="navbar bg-white">
@@ -163,7 +163,7 @@ export default function Header() {
               tabIndex={0}
               className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
             >
-              <div className="card-body">
+              <div className="card-body bg-white">
                 <span className="font-bold text-lg">{cartCount} Items</span>
                 <span className="text-info">Subtotal: IDR {cartPayment}</span>
                 <div className="card-actions">
