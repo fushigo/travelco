@@ -39,11 +39,19 @@ export function CardCart({
                 <p>+</p>
               </div>
             </div>
-            <div onClick={handleDelete} className="text-xl hover:cursor-pointer">
+            <div
+              onClick={handleDelete}
+              className="text-xl hover:cursor-pointer"
+            >
               <FaRegTrashAlt />
             </div>
           </div>
-          <div className=" w-full btn bg-secondary text-white">CHECKOUT</div>
+          <div
+            onClick={handleCheckout}
+            className=" w-full btn bg-secondary text-white"
+          >
+            CHECKOUT
+          </div>
         </div>
       </div>
     </div>

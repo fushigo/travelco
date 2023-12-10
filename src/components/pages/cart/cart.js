@@ -1,6 +1,7 @@
 import { CardCart } from "@/components/card-cart";
 import axios, { AxiosHeaders } from "axios";
 import { getCookie } from "cookies-next";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -9,18 +10,21 @@ export default function CartPage() {
   const [productData, setProductData] = useState({});
   const [hargaProduct, setHargaProduct] = useState([]);
   const [destinasi, setDestinasi] = useState("");
+  const [session, setSession] = useState(null);
   const [userid, setUserId] = useState("");
+  const sessionCookie = getCookie("session.cookie");
+  const Router = useRouter();
+  const defaultQuantity = "1";
 
   useEffect(() => {
     let id = getCookie("id.cookie");
+    setSession(sessionCookie);
     setUserId(id);
     async function get() {
       await getUserCart(userid);
     }
     get();
   }, [userid]);
-
-  // useEffect(() => {}, [getUserCart]);
 
   useEffect(() => {
     getProduct();
@@ -55,23 +59,7 @@ export default function CartPage() {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        let headers = {
-          "x-api-key": "travelco2023",
-        };
-
-        let token = localStorage.getItem("token");
-
-        if (token !== null) headers.Authorization = `Bearer ${token}`;
-
-        let config = {
-          headers: headers,
-        };
-
         try {
-          // const response = await axios.delete(
-          //   `https://travelco-api-zeta.vercel.app/api/cart/delete-card?id=${userid}&productId=${Id}`
-          // );
-
           await axios({
             method: "DELETE",
             url: `https://travelco-api-zeta.vercel.app/api/cart/delete-card?id=${userid}&productId=${Id}`,
@@ -81,15 +69,15 @@ export default function CartPage() {
             },
           });
 
-          Router.reload({ pathname: "/" });
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+          Router.reload();
         } catch (error) {
           return error.response;
         }
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success",
-        });
       }
     });
   }
