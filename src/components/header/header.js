@@ -4,21 +4,57 @@ import { deleteCookie, getCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import logo from "@/asset/TRAVELCO-F.svg";
 import Image from "next/image";
+import axios from "axios";
 
 export default function Header() {
   const [header, setHeader] = useState(false);
   const [session, setSession] = useState(null);
+  const [idCookie, setIdCookie] = useState("");
   const [role, setRole] = useState(null);
+  const [userCart, setUserCart] = useState(null);
+  const [cartCount, setCartCount] = useState("0");
+  const [cartPayment, setCartPayment] = useState("0");
   const Router = useRouter();
+
+  useEffect(() => {
+    async function getCartData(id) {
+      const userId = id;
+
+      // console.log(userId);
+
+      try {
+        const response = await axios.get(
+          `https://travelco-api-zeta.vercel.app/api/cart/get-cart-user?id=${userId}`
+        );
+        setUserCart(response.data.data);
+        setCartCount(response.data.totalCartData);
+        setCartPayment(response.data.payment);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getCartData(idCookie);
+  }, [cartCount, cartPayment]);
 
   useEffect(() => {
     setSession(getCookie("session.cookie"));
     setRole(getCookie("role.cookie"));
+    setIdCookie(getCookie("id.cookie"));
   }, []);
+
+  const handleCartClick = () => {
+    if (!session) {
+      Router.push("/login");
+    } else {
+      Router.push("/cart");
+    }
+  };
 
   const handleClick = () => {
     deleteCookie("session.cookie");
     deleteCookie("role.cookie");
+    deleteCookie("id.cookie");
     localStorage.removeItem("token");
     Router.push({ pathname: "/" });
     Router.reload({ pathname: "/" });
@@ -118,7 +154,9 @@ export default function Header() {
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-                <span className="badge badge-sm indicator-item">8</span>
+                <span className="badge badge-sm indicator-item">
+                  {cartCount}
+                </span>
               </div>
             </div>
             <div
@@ -126,10 +164,13 @@ export default function Header() {
               className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
             >
               <div className="card-body">
-                <span className="font-bold text-lg">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
+                <span className="font-bold text-lg">{cartCount} Items</span>
+                <span className="text-info">Subtotal: IDR {cartPayment}</span>
                 <div className="card-actions">
-                  <button className="btn btn-primary btn-block">
+                  <button
+                    onClick={handleCartClick}
+                    className="btn btn-primary btn-block"
+                  >
                     View cart
                   </button>
                 </div>
