@@ -75,7 +75,10 @@ export default function CartPage() {
           await axios({
             method: "DELETE",
             url: `https://travelco-api-zeta.vercel.app/api/cart/delete-card?id=${userid}&productId=${Id}`,
-            headers: config,
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "x-api-key": "travelco2023",
+            },
           });
 
           Router.reload({ pathname: "/" });
