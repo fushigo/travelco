@@ -64,7 +64,7 @@ export default function CartPage() {
         try {
           await axios({
             method: "DELETE",
-            url: `https://travelco-api-zeta.vercel.app/api/cart/delete-card?id=${userid}&productId=${Id}`,
+            url: `https://travelco-api-zeta.vercel.app/api/cart/delete-card?id=${Id}`,
             headers: {
               Authorization: `Bearer ${token}`,
               "x-api-key": "travelco2023",
@@ -146,7 +146,7 @@ export default function CartPage() {
           destinasi={items?.product?.nama}
           harga={items?.product?.harga}
           quantity={items?.quantity}
-          handleDelete={() => deleteCart(items.product.productId)}
+          handleDelete={() => deleteCart(items?.cartId)}
           handleCheckout={() =>
             checkout(items?.cartId, items.product.productId)
           }
