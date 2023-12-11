@@ -165,7 +165,7 @@ export default function Header() {
             </div>
             <div
               tabIndex={0}
-              className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
+              className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-white shadow"
             >
               <div className="card-body bg-white">
                 <span className="font-bold text-lg">{cartCount} Items</span>
@@ -196,7 +196,7 @@ export default function Header() {
             </div>
             <div
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
             >
               {session && role === "ADMIN" ? (
                 <div className="flex flex-col gap-4">
