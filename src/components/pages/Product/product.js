@@ -89,7 +89,7 @@ export default function ProductPage() {
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center">
+    <div className="container flex flex-col items-center justify-center bg-white">
       <div>
         <h1 className="text-font font-extrabold text-4xl">
           Temukan{" "}

@@ -29,14 +29,14 @@ export function CardCart({
         <div className="flex flex-col gap-4">
           <div className="flex flex-row justify-between items-center">
             <div className="flex flex-row gap-4">
-              <div className="btn">
-                <p>-</p>
+              <div className="btn bg-gray-2">
+                <p className="text-black">-</p>
               </div>
               <div className="btn bg-slate-200">
-                <p>{quantity}</p>
+                <p className="text-black">{quantity}</p>
               </div>
-              <div className="btn">
-                <p>+</p>
+              <div className="btn bg-gray-2">
+                <p className="text-black">+</p>
               </div>
             </div>
             <div

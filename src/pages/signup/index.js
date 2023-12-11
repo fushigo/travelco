@@ -7,7 +7,7 @@ export default function SignUp() {
   return (
     <div>
       <Header />
-      <div className="py-12">
+      <div className="py-30 bg-slate-100">
         <SignUpPage />
       </div>
       <FooterSection />
