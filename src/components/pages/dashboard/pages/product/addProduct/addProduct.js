@@ -50,19 +50,20 @@ export default function AddProductPage() {
   }
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-slate-100">
+    <div className="w-full h-screen flex items-center justify-center bg-slate-100 dark:bg-boxdark-2">
       <form
         onSubmit={submit}
-        className="fle flex-col max-w-xl space-y-8 w-full bg-white p-8 rounded-xl"
+        className="fle flex-col max-w-xl space-y-8 w-full bg-white p-8 rounded-xl dark:bg-boxdark"
       >
         <div className="flex flex-row gap-x-8">
           <div>
             <div className="mb-2 block">
               <Label htmlFor="nama" value="nama" />
             </div>
-            <TextInput
+            <input
               onChange={(e) => setNama(e.target.value)}
               id="nama"
+              className="bg-white p-2 border-2 rounded-lg border-slate-300 dark:bg-boxdark dark:border-slate-500"
               type="text"
               placeholder="name"
               value={nama}
@@ -73,9 +74,10 @@ export default function AddProductPage() {
             <div className="mb-2 block">
               <Label htmlFor="harga" value="harga" />
             </div>
-            <TextInput
+            <input
               onChange={(e) => setHarga(e.target.value)}
               id="harga"
+              className="bg-white p-2 border-2 rounded-lg border-slate-300 dark:bg-boxdark dark:border-slate-500"
               type="text"
               placeholder="harga"
               value={harga}
@@ -84,7 +86,7 @@ export default function AddProductPage() {
             />
           </div>
         </div>
-        <Button className="text-white bg-secondary" type="submit">
+        <Button className="text-white bg-secondary dark:bg-boxdark dark:hover:bg-slate-500" type="submit">
           Create
         </Button>
       </form>

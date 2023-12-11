@@ -87,20 +87,21 @@ export default function EditUserPage() {
   }, []);
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-slate-100">
+    <div className="w-full h-screen flex items-center justify-center bg-slate-100 dark:bg-boxdark-2">
       <form
         onSubmit={submit}
-        className="fle flex-col max-w-xl space-y-8 w-full bg-white p-8 rounded-xl"
+        className="fle flex-col max-w-xl space-y-8 w-full bg-white p-8 rounded-xl dark:bg-boxdark"
       >
         <div className="flex flex-row gap-x-8">
           <div>
             <div className="mb-2 block">
               <Label htmlFor="nama" value="nama" />
             </div>
-            <TextInput
+            <input
               onChange={(e) => setNama(e.target.value)}
               id="nama"
               type="text"
+              className="bg-white p-2 border-2 rounded-lg border-slate-300 dark:bg-boxdark dark:border-slate-500"
               placeholder="name"
               value={nama}
               required
@@ -110,10 +111,11 @@ export default function EditUserPage() {
             <div className="mb-2 block">
               <Label htmlFor="username" value="username" />
             </div>
-            <TextInput
+            <input
               onChange={(e) => setUsername(e.target.value)}
               id="username"
               type="text"
+              className="bg-white p-2 border-2 rounded-lg border-slate-300 dark:bg-boxdark dark:border-slate-500"
               placeholder="username"
               value={username}
               required
@@ -125,10 +127,11 @@ export default function EditUserPage() {
           <div className="mb-2 block">
             <Label htmlFor="email1" value="email" />
           </div>
-          <TextInput
+          <input
             onChange={(e) => setEmail(e.target.value)}
             id="email1"
             type="email"
+            className="bg-white p-2 border-2 rounded-lg border-slate-300 dark:bg-boxdark dark:border-slate-500"
             placeholder="name@flowbite.com"
             value={email}
             required
@@ -138,10 +141,11 @@ export default function EditUserPage() {
           <div className="mb-2 block">
             <Label htmlFor="password" value="password" />
           </div>
-          <TextInput
+          <input
             onChange={(e) => setPassword(e.target.value)}
             id="password"
             type="password"
+            className="bg-white p-2 border-2 rounded-lg border-slate-300 dark:bg-boxdark dark:border-slate-500"
             value={password}
             required
           />

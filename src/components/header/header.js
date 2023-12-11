@@ -80,8 +80,8 @@ export default function Header() {
     <div
       className={
         header
-          ? "fixed w-full flex border-b-2 border-slate-300 z-50 border-gray-200 bg-white"
-          : "flex fixed w-full bg-white z-50"
+          ? "fixed w-full flex border-b-2 border-slate-300 z-50 border-gray-200 bg-white text-black"
+          : "flex fixed w-full bg-white text-black z-50"
       }
     >
       <div className="navbar bg-white">
@@ -158,7 +158,7 @@ export default function Header() {
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-                <span className="badge badge-sm indicator-item">
+                <span className="badge badge-sm indicator-item bg-white text-black">
                   {cartCount}
                 </span>
               </div>
@@ -168,12 +168,14 @@ export default function Header() {
               className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-white shadow"
             >
               <div className="card-body bg-white">
-                <span className="font-bold text-lg">{cartCount} Items</span>
+                <span className="font-bold text-lg text-black">
+                  {cartCount} Items
+                </span>
                 <span className="text-info">Subtotal: IDR {cartPayment}</span>
                 <div className="card-actions">
                   <button
                     onClick={handleCartClick}
-                    className="btn btn-primary btn-block"
+                    className="btn bg-secondary text-white btn-block border-white"
                   >
                     View cart
                   </button>
@@ -200,23 +202,38 @@ export default function Header() {
             >
               {session && role === "ADMIN" ? (
                 <div className="flex flex-col gap-4">
-                  <Link className="btn" href={"/dashboard"}>
+                  <Link
+                    className="btn bg-secondary text-white border-white"
+                    href={"/dashboard"}
+                  >
                     Dashboard
                   </Link>
-                  <a className="btn" onClick={handleClick}>
+                  <a
+                    className="btn bg-secondary text-white border-white"
+                    onClick={handleClick}
+                  >
                     Logout
                   </a>
                 </div>
               ) : role === "USER" ? (
-                <a className="btn" onClick={handleClick}>
+                <a
+                  className="btn bg-secondary text-white border-white"
+                  onClick={handleClick}
+                >
                   Logout
                 </a>
               ) : (
                 <div className="flex flex-col gap-4">
-                  <Link className="btn" href={"/login"}>
+                  <Link
+                    className="btn bg-secondary text-white border-white"
+                    href={"/login"}
+                  >
                     Login
                   </Link>
-                  <Link className="btn" href={"/signup"}>
+                  <Link
+                    className="btn bg-secondary text-white border-white"
+                    href={"/signup"}
+                  >
                     SignUp
                   </Link>
                 </div>

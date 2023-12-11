@@ -139,7 +139,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center gap-8 py-16 p-8">
+    <div className="flex flex-col justify-center items-center bg-white gap-8 py-16 p-8">
       {cartData.map((items, key) => (
         <CardCart
           key={key}

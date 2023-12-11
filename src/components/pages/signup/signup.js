@@ -53,7 +53,7 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-100 h-auto text-black">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
           Travelco
@@ -80,7 +80,7 @@ export default function SignUpPage() {
                   type="text"
                   name="nama"
                   id="nama"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  className="bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   placeholder="name"
                   required=""
                 />
@@ -102,7 +102,7 @@ export default function SignUpPage() {
                   type="username"
                   name="username"
                   id="username"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  className="bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   placeholder="John Doe "
                   required=""
                 />
@@ -119,7 +119,7 @@ export default function SignUpPage() {
                   type="email"
                   name="email"
                   id="email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  className="bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   placeholder="name@gmail.com"
                   required=""
                 />
@@ -142,7 +142,7 @@ export default function SignUpPage() {
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  className="bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   required=""
                 />
               </div>
@@ -150,6 +150,7 @@ export default function SignUpPage() {
                 <div className="flex items-start">
                   <div className="flex items-center gap-2">
                     <Checkbox
+                      className="bg-white"
                       onChange={(e) => setAggre(e.target.checked)}
                       id="accept"
                       defaultChecked
@@ -176,7 +177,7 @@ export default function SignUpPage() {
                 Alerady have an account ?{" "}
                 <Link
                   href="/login"
-                  className="font-medium text-primary-600 hover:underline"
+                  className="font-medium text-primary-600 hover:underline text-secondary"
                 >
                   Sign in
                 </Link>

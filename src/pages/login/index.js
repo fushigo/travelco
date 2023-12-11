@@ -7,7 +7,7 @@ export default function Login() {
   return (
     <div>
       <Header />
-      <div className="py-12">
+      <div className="py-12 bg-slate-100">
         <LoginPage />
       </div>
       <FooterSection />

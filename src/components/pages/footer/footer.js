@@ -6,7 +6,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 
 export default function FooterSection() {
   return (
-    <div className="flex flex-col septaGtg justify-center items-center">
+    <div className="flex flex-col septaGtg justify-center items-center bg-white text-black">
       <div className="bg-secondary rounded-t-2xl md:flex md:flex-row md:items-center">
         <div className="flex flex-col gap-8 p-8">
           <h2 className="text-4xl font-extrabold text-primary">
