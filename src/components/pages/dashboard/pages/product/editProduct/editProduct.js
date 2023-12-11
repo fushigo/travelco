@@ -101,7 +101,7 @@ export default function EditProductPage() {
               <Label htmlFor="harga" value="harga" />
             </div>
             <TextInput
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setHarga(e.target.value)}
               id="harga"
               type="number"
               placeholder="harga"
