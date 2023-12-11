@@ -77,7 +77,7 @@ const DropdownUser = () => {
           <span className="block text-sm font-medium text-black dark:text-white">
             {username}
           </span>
-          <span className="block text-xs">Admin</span>
+          <span className="block text-xs dark:text-white">Admin</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
@@ -115,7 +115,7 @@ const DropdownUser = () => {
           dropdownOpen === true ? "block" : "hidden"
         }`}
       >
-        <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
+        <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark dark:text-white">
           <li>
             <Link
               href="/profile"
@@ -190,7 +190,7 @@ const DropdownUser = () => {
         </ul>
         <button
           onClick={handleClick}
-          className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-secondary lg:text-base"
+          className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-secondary lg:text-base dark:text-white dark:hover:text-secondary"
         >
           <svg
             className="fill-current"
